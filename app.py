@@ -22,7 +22,7 @@ movies = [
     {'title': '会员', 'year': 'service_customer'},
     {'title': '首页', 'year': 'gateway_hippo'},
     {'title': '场次', 'year': 'bannerservice'},
-    {'title': '测试', 'year': 'test'}
+    {'title': '主会场', 'year': 'picasso'}
 ]
 
 @app.route('/list')

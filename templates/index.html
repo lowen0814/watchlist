@@ -2,19 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{name}}'s Watchlist</title>
+    <title>{{name}}'s testlist</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" type="text/css">
+
 </head>
 <body>
-<h2>{{name}}'s Watchlist </h2>
-<p>{{movies|length}} Titles</p>
+<h2>
+    <img alt="Avatar" class="avatar" src="{{url_for('static',filename='images/imag-2.gif')}}">
+    {{name}}'s testlist
+
+</h2>
+
+<ul class="file-list">
+    <p>{{movies|length}} Titles</p>
 <url>
     {% for movie in movies %}
-    <li>{{movie.title}} - {{movie.year}}</li>
+    <li>{{movie.title}} -- {{movie.year}}</li>
     {% endfor %}
 
 </url>
+
+</ul>
+
 <footer>
-    <small>2019 <a herf="http://helloflask.com/tutorial">HelloFlask</a></small>
+    <small>2019 <a herf="http://helloflask.com/tutorial">Helloaxw</a></small>
 </footer>
 
 </body>
