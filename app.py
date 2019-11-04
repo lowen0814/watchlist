@@ -1,5 +1,18 @@
 from flask import Flask
+from flask import url_for
 app = Flask(__name__)
-@app.route('/')
+@app.route('/home')
 def hello():
-    return '鱼子 你看'
+    return '<h1>Hello aliao </h1><img src="http://helloflask.com/totoro.gif">'
+@app.route('/user/<name>')
+def user_page(name):
+    return 'hello %s visiter' % name + '<h1>look </h1><img src="http://helloflask.com/totoro.gif">'
+
+@app.route('/test')
+def test_url_for():
+    print(url_for('hello'))
+    print(url_for('user_page',name='axw'))
+    print(url_for('user_page',name='test'))
+    print(url_for('test_url_for'))
+    print(url_for('test_url_for',num=2))
+    return 'Test page'
