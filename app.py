@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,render_template
 from flask import url_for
 app = Flask(__name__)
 @app.route('/home')
@@ -16,3 +16,15 @@ def test_url_for():
     print(url_for('test_url_for'))
     print(url_for('test_url_for',num=2))
     return 'Test page'
+
+name = 'axw'
+movies = [
+    {'title': '会员', 'year': 'service_customer'},
+    {'title': '首页', 'year': 'gateway_hippo'},
+    {'title': '场次', 'year': 'bannerservice'},
+    {'title': '测试', 'year': 'test'}
+]
+
+@app.route('/list')
+def index():
+    return render_template('index.html', name=name, movies=movies)
