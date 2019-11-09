@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{user.name}} filesList</title>
+    <link rel="icon" href="{{url_for('static',filename='images/imag-1.png')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" type="text/css">
+    {% endblock %}
+</head>
+<body>
+    {% for message in get_flashed_messages() %}
+        <div class="alert">{{message}}</div>
+    {% endfor %}
+    <h2>
+        <img alt="Avatar" class="avatar" src="{{url_for('static',filename = 'images/imag-1.png')}}">
+        {{user.name}} filesList
+    </h2>
+    <nav>
+        <ul>
+            <li><a href="{{url_for('db_index')}}">Home</a></li>
+        </ul>
+    </nav>
+    {% block content%}{% endblock%}
+    <footer>
+        <small>2019 axw <a href="http://helloflask.com/tutrial">HelloFlask</a></small>
+    </footer>
+
+</body>
+</html>
