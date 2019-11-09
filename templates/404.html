@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{user.name}}'s list</title>
+    <link rel="icon" href="{{url_for('static', filename='images/image-1.png' )}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" type="text/css">
+</head>
+<body>
+
+<h2>
+    <img alt="Avatar" class = "avatar" src="{{url_for('static',filename='images/image-2.gif')}}">
+    {{user.name}}'s list
+</h2>
+<u1 class="file-list">
+    <li>
+        page not found -404
+        <span class="float-right">
+            <a href="{{url_for('index')}}">go back</a>
+
+        </span>
+
+    </li>
+</u1>
+<footer>
+    <small>2019 <a href="http://helloflask.com/tutorial">Hello</a></small>
+</footer>
+
+</body>
+</html>
