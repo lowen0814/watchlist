@@ -2,22 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{name}}'s testlist</title>
+    <title>{{user}}'s testlist</title>
     <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" type="text/css">
 
 </head>
-<body>
+<body style="background-color:#FFCC99">
 <h2>
-    <img alt="Avatar" class="avatar" src="{{url_for('static',filename='images/imag-2.gif')}}">
-    {{name}}'s testlist
+    <img alt="Avatar" class="avatar" src="{{url_for('static',filename='images/imag-2.gif')}}" >
+    {{user}}'s testlist
 
 </h2>
 
 <ul class="file-list">
-    <p>{{movies|length}} Titles</p>
+    <p>{{files|length}} Titles</p>
 <url>
-    {% for movie in movies %}
-    <li>{{movie.title}} -- {{movie.year}}</li>
+    {% for file in files %}
+    <li>{{file.title}} -- {{file.year}}</li>
     {% endfor %}
 
 </url>
@@ -28,5 +28,8 @@
     <small>2019 <a herf="http://helloflask.com/tutorial">Helloaxw</a></small>
 </footer>
 
+<p3>
+    index
+</p3>
 </body>
 </html>
