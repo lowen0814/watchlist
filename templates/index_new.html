@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<p> {{files|length}} Titles</p>
+<form method="post">
+    Name <input type="text" name="title" autocomplete="off" required>
+    Year <input type="text" name="year" autocomplete="off" required>
+    <input class="btn" type="submit" name="submit" value="Add">
+</form>
+<ul class="file-list">
+    {% for file in files %}
+    <li>{{file.title}} -- {{file.year}}
+        <span class="float-right">
+            <form class="inline-form" method="post" action="{{url_for('delete',file_id=file.id)}}">
+                <a class="imdb" href="https://www.imdb.com/find?q={{file.title}}" target="_blank" title="Find this file on IMDB">IMDB</a>
+                <a class="btn" href="{{url_for('edit',file_id=file.id)}}"> Edit </a>
+                <input class="btn" type="submit" name="delete" value="Delete" onclick="return confirm('Are you sure?')">
+
+            </form>
+
+        </span>
+
+    </li>
+    {% endfor %}
+
+</ul>
+<!img alt="Walking Totoro" class="avatar" src="{{ url_for('static',filename='images/imag-1.png')}}" title="To~To">
+<!img alt="Avatar" class="avatar" src="{{url_for('static',filename='images/imag-2.gif')}}" >
+<p3>
+    index_new  ！
+</p3>
+
+{% endblock %}
