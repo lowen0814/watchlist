@@ -1,3 +1,6 @@
+#coding=utf-8
+#二分查找
+# O(log n)
 def binary_serch(list, item):
     low = 0
     high = len(list)-1
@@ -18,3 +21,5 @@ def binary_serch(list, item):
 my_list = [1,3,5,6,34,67,78,9]
 print binary_serch(my_list,6)
 print binary_serch(my_list,7)
+
+
